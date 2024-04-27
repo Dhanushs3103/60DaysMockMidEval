@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+#root {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.card {
+    border-radius: 10px;
+    width: 260px;
+    height: 390px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+.card > img {
+    width: 250px;
+    height: 200px;
+}
+
+.card >p {
+    margin: 0;
+    font-size: 18px;
+
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Productslisting Page</title>
+</head>
+<body>
+    <div id="navbar">
+        <!-- navbar title -->
+        <p id="head">Product listing Page</p>
+        <!-- category -->
+        <select id="categories">
+            <option value="">all categories</option>
+            <option value="men's clothing">men's clothing</option>
+            <option value="jewelery">jewellery</option>
+            <option value="electronics">electronics</option>
+            <option value="women's clothing">women's clothing</option>
+        </select>
+        <!-- search functionality -->
+        <input id="search" type="text" placeholder="Search for products">
+        <!-- sorting -->
+        <select id="sorting">
+            <option value="">Sort by price</option>
+            <option id="desc" value="desc">High to low</option>
+            <option id="asec" value="asc">Low to High</option>
+        </select>
+    </div>
+    <!-- Main container -->
+    <div id="root"></div>
+</body>
+<script src="./main.js"></script>
+</html>
