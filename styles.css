@@ -4,6 +4,53 @@ body {
     font-family: Poppins, sans-serif;
 }
 
+#navbar {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #ecd085;
+}
+
+#head {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#categories {
+    height: 60px;
+    font-size: 18px;
+    border-radius: 20px;
+    border: 0 !important;
+    outline: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#search {
+    height: 30px;
+    margin-top: 5px;
+    font-size: 18px;
+    border-radius: 20px;
+    border: 0 !important;
+    outline: 0;
+    padding: 10px 20px;
+
+}
+
+
+#sorting {
+    height: 60px;
+    font-size: 18px;
+    border-radius: 20px;
+    border: 0 !important;
+    outline: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+
 #root {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

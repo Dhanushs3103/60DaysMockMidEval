@@ -1,12 +1,17 @@
 let root = document.getElementById("root");
 let sorting = document.getElementById("sorting");
 let Categories = document.getElementById("categories");
+let searchInput  = document.getElementById("search");
+
+searchInput.addEventListener("input",function() {
+    debounce(handleSearch,1000)
+})
 
 // Adding eventListener to sorting
 sorting.addEventListener("change" , handleSorting)
 
 // Adding eventListener to categories
-Categories.addEventListener('change',handleCategory);
+Categories.addEventListener("change",handleCategory);
 
 // function to check the sorting option
 function handleSorting() {
@@ -18,16 +23,46 @@ function handleSorting() {
     }
 }
 
-// function for categories selection
-async function handleCategory () {
-    let category = Categories.value;
+// function to handle search
+
+ async function handleSearch(){
+    let inputValue = searchInput.value;
+    console.log(inputValue);
     try {
-        let res = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+        let res = await fetch(`https://fakestoreapi.com/products?search=${inputValue}`);
         let data = await res.json();
-        displayData(data)
+        console.log(data);
     } catch (error) {
         console.log(error);
     }
+}
+
+let timerId;
+function debounce (callBackFunc,delay) {
+   if(timerId) {
+    clearTimeout(timerId);
+   }
+
+   timerId = setTimeout(function (){
+    callBackFunc();
+   },delay)
+}
+
+// function for categories selection
+async function handleCategory () {
+    let category = Categories.value;
+    if(category === "all categories"){
+        getData()
+    } else{
+        try {
+            let res = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+            let data = await res.json();
+            displayData(data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    
 }
 
 // function to get getData
@@ -87,7 +122,7 @@ function displayData(products){
     }
 }
 
-// // function to sort in assending order
+// function to sort in assending order
 async function sortAsec() {
     try {
         let res = await fetch("https://fakestoreapi.com/products?sort=asc");
